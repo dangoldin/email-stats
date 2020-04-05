@@ -14,8 +14,6 @@ def get_email_stats(creds):
 
     num_emails = len(data[0].split())
 
-    print('Fetched', num_emails , 'emails')
-
     now = time.time()
 
     total_age_seconds = 0
@@ -26,11 +24,7 @@ def get_email_stats(creds):
                 email_parser = email.parser.BytesFeedParser()
                 email_parser.feed(response_part[1])
                 msg = email_parser.close()
-                # for header in ['subject', 'to', 'from', 'date']:
-                #     print('{:^8}: {}'.format(
-                #         header.upper(), msg[header]))
-                t = email.utils.parsedate(msg['DATE'])
-                total_age_seconds += time.mktime(t)
+                total_age_seconds += time.mktime(email.utils.parsedate(msg['DATE']))
     imap.close()
 
     return {
