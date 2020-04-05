@@ -1,0 +1,22 @@
+{
+    "imap": {
+        "work": {
+            "imap_host": "imap.gmail.com",
+            "imap_port": 993,
+            "imap_user": "email@host.com",
+            "imap_pass": "password"
+        },
+        "personal": {
+            "imap_host": "imap.gmail.com",
+            "imap_port": 993,
+            "imap_user": "email2@host2.com",
+            "imap_pass": "password2"
+        }
+    },
+    "db": {
+        "host": "db_host",
+        "user": "db_user",
+        "pass": "db_pass",
+        "database": "stats"
+    }
+}
