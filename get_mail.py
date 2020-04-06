@@ -29,7 +29,7 @@ def get_email_stats(creds):
 
     return {
         'num_emails': num_emails,
-        'avg_age_seconds': (now * num_emails - total_age_seconds) / num_emails
+        'avg_age_seconds': (now * num_emails - total_age_seconds) / num_emails if num_emails > 0 else 0
     }
 
 def save_stats(creds, account_name, num_emails, avg_age_seconds):
